@@ -1,10 +1,11 @@
-import React from 'react'
+
 import profilePic from "/public/me6.jpg";
+import { Github, Linkedin, Twitter } from "lucide-react";
 
 
 function Aboutme() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-indigo-900 text-white px-6">
+    <section className="min-h-screen flex items-center justify-center bg-black text-white ">
       <div className="max-w-4xl w-full flex flex-col md:flex-row items-center gap-10 bg-gradient-to-br from-indigo-600/30 to-purple-600/30 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-indigo-500/30">
         {/* 🧑 Profile Image */}
         <div className="relative flex-shrink-0">
@@ -18,7 +19,7 @@ function Aboutme() {
           <div className="absolute inset-0 rounded-full bg-indigo-500/20 blur-xl"></div>
         </div>
 
-        {/* 📝 Text Info */}
+        
         <div className="flex-1 text-center md:text-left">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-indigo-400">
             Hi, I'm Israel Adeniji
