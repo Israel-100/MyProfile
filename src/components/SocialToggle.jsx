@@ -9,42 +9,49 @@ export default function SocialToggle() {
       {/* Main Toggle Button */}
       <button
         onClick={() => setOpen(!open)}
-        className="p-4 rounded-full bg-slate-900 text-white shadow-lg hover:bg-slate-700 transition-all"
+        className="p-4 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-all"
       >
         {open ? <X size={20} /> : <Share2 size={20} />}
       </button>
 
-      {/* Social Icons Popup */}
-      {open && (
-        <div className="absolute top-1/2 right-14 transform -translate-y-1/2 bg-gray-900 text-white p-4 rounded-xl shadow-lg flex flex-col gap-4 animate-fade-in">
-          <a
-            href="https://github.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-400 flex items-center gap-2"
-          >
-            <Github size={20} /> <span>GitHub</span>
-          </a>
+      {/* Sliding Social Icons Panel */}
+      <div
+        className={`absolute top-1/2 right-14 transform -translate-y-1/2 
+        bg-gray-900/90 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg 
+        flex flex-col gap-4 transition-all duration-500 ease-in-out
+        ${
+          open
+            ? "opacity-100 translate-x-0"
+            : "opacity-0 translate-x-10 pointer-events-none"
+        }`}
+      >
+        <a
+          href="https://github.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-indigo-400 flex items-center gap-2 transition"
+        >
+          <Github size={20} /> <span>GitHub</span>
+        </a>
 
-          <a
-            href="https://linkedin.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-400 flex items-center gap-2"
-          >
-            <Linkedin size={20} /> <span>LinkedIn</span>
-          </a>
+        <a
+          href="https://linkedin.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-indigo-400 flex items-center gap-2 transition"
+        >
+          <Linkedin size={20} /> <span>LinkedIn</span>
+        </a>
 
-          <a
-            href="https://twitter.com/"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-indigo-400 flex items-center gap-2"
-          >
-            <Twitter size={20} /> <span>Twitter</span>
-          </a>
-        </div>
-      )}
+        <a
+          href="https://twitter.com/"
+          target="_blank"
+          rel="noreferrer"
+          className="hover:text-indigo-400 flex items-center gap-2 transition"
+        >
+          <Twitter size={20} /> <span>Twitter</span>
+        </a>
+      </div>
     </div>
   );
 }
