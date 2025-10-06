@@ -1,4 +1,5 @@
 import SpotlightCard from "../components/SpotlightCard";
+import AnimatedSection from "./AnimatedSection";
 
 function Serve() {
 
@@ -20,24 +21,26 @@ function Serve() {
      },
    ];
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-10">
-      <h1 className="text-4xl font-bold mb-12 text-center">
-        My <span className="text-indigo-400">Services</span>
-      </h1>
+    <AnimatedSection>
+      <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-5">
+        <h1 className="text-4xl font-bold mb-12 text-center">
+          My <span className="text-indigo-400">Services</span>
+        </h1>
 
-      <div className="grid gap-8 md:grid-cols-3 max-w-6xl w-full ">
-        {cards.map((card, index) => (
-          <SpotlightCard
-            key={index}
-            spotlightColor={card.color}
-            className="h-52 items-center text-center hover:scale-105 transition-transform duration-500 ease-out "
-          >
-            <h2 className="text-2xl font-semibold mb-4">{card.title}</h2>
-            <p className="text-gray-300">{card.desc}</p>
-          </SpotlightCard>
-        ))}
+        <div className="grid gap-8 md:grid-cols-3 max-w-6xl w-full ">
+          {cards.map((card, index) => (
+            <SpotlightCard
+              key={index}
+              spotlightColor={card.color}
+              className="h-56 text-center hover:scale-105 transition-transform duration-500 ease-out "
+            >
+              <h2 className="text-2xl font-semibold mb-4">{card.title}</h2>
+              <p className="text-gray-300">{card.desc}</p>
+            </SpotlightCard>
+          ))}
+        </div>
       </div>
-    </div>
+    </AnimatedSection>
   );
 }
 
